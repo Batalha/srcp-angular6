@@ -1,0 +1,53 @@
+<app-servico-card>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <form action="" #f="ngForm">
+                <input type="hidden" name="id" [(ngModel)]="servico.id">
+                <div class="card c2 bg-light">
+                    <div class="card-header c-header2">{{servico.id ? 'Alterar Serviço': 'Novo Serviço'}}</div>
+                    <div class="card-body c-body2">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="nome" class="control-label">Nome do Serviço</label>
+                                <input class="form-control" type="text" id="nome" name="nome"
+                                       [(ngModel)]="servico.nome"
+                                       required
+                                >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="preco" class="control-label">Preço do Serviço</label>
+                                <input class="form-control" type="text" id="preco" name="preco"
+                                       [(ngModel)]="servico.preco"
+                                       required
+                                >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="descricao" class="control-label">Descrição do Serviço</label>
+                                <input class="form-control" type="text" id="descricao" name="descricao"
+                                       [(ngModel)]="servico.descricao"
+                                       required
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button *ngIf="servico.id" type="button" class="btn btn-outline-success" (click)="updateServico()"
+                        [disabled]="!f.valid"><img src="js/assets/svg/si-glyph-floppy-disk.svg"/>
+                    Alterar Serviço
+                </button>
+                <button *ngIf="!servico.id" type="button" class="btn btn-outline-success" (click)="saveServico()"
+                        [disabled]="!f.valid"><img src="js/assets/svg/si-glyph-floppy-disk.svg"/>
+                    Salvar Serviço
+                </button>
+                <button class="btn btn-outline-secondary" routerLink="/srcp/servico">
+                    <img src="js/assets/svg/si-glyph-backward-page.svg"/> Voltar
+                </button>
+            </form>
+        </div>
+
+    </div>
+</app-servico-card>

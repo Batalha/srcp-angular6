@@ -1,0 +1,25 @@
+.container-fluid {
+  .row-fluid {
+    margin-top: 20px;
+    font-family: Helvetica, Roboto, Arial, sans-serif;
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 0px;
+  border-left: none;
+  margin-top: -44px;
+  margin-left: 220px;
+  min-height: 850px;
+
+  .card-header {
+    background-color: #FFFFFF;
+    padding: 0.6rem 1.25rem;
+  }
+  .card-body {
+    padding: 0;
+    padding: 0px 20px;
+    background-color: #F0F1F2;
+  }
+}

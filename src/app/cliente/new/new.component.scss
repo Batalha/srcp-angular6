@@ -1,0 +1,22 @@
+
+.c2{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.c-header2{
+  font-weight: bold;
+  color: rgba(103, 87, 57, 0.8);
+  padding: .60rem 1.25rem;
+}
+
+.control-label{
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(103, 87, 57, 0.8);
+}
+
+
+.ng-invalid.ng-touched:not(form){
+  border: 1px solid red;
+}

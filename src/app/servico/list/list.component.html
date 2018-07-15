@@ -1,0 +1,50 @@
+<app-servico-card>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success" routerLink="/srcp/servico/new"><img
+                            src="js/assets/svg/si-glyph-hammer-and-wrench.svg"/> Novo Serviço
+                    </button>
+                </div>
+                <div *ngIf="message" class="col-md-8 text-left">
+                    <app-alert-servico [timeout]="4000">{{message}}</app-alert-servico>
+                </div>
+            </div>
+            <div class="card c2 bg-light">
+                <div class="card-header c-header2">Serviços</div>
+                <div class="card-body c-body2">
+
+                    <table id="t_servico" class="table table-sm display">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Descrição</th>
+                            <th>Ação</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbS" hidden>
+                        <tr *ngFor="let servico of listServico; let i = index">
+                            <td>{{servico.id}}</td>
+                            <td>{{servico.nome}}</td>
+                            <td>{{servico.preco}}</td>
+                            <td>{{servico.descricao}}</td>
+                            <td>
+                                <a routerLink='/srcp/servico/{{servico.id}}/edit' class="badge b-edit badge-info">
+                                    <img src="js/assets/svg/si-glyph-edit.svg" alt="">
+                                </a>
+                                <a href="javascript:void(0)" (click)="destroyServico(servico.id,i)" class="badge b-delete badge-danger">
+                                    <img src="js/assets/svg/si-glyph-delete.svg" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</app-servico-card>

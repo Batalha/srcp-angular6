@@ -1,0 +1,125 @@
+<app-cliente-card>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <form action="" #f="ngForm">
+                <input type="hidden" name="id" [(ngModel)]="cliente.id">
+                <div class="card c2 bg-light">
+                    <div class="card-header c-header2">{{cliente.id ? 'Alterar Cliente': 'Novo Cliente'}}</div>
+                    <div class="card-body c-body2">
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="cpf_cnpj" class="control-label">CPF/CNPJ</label>
+                                <input class="form-control" type="text" id="cpf_cnpj" name="cpf_cnpj"
+                                       [(ngModel)]="cliente.cpf_cnpj"
+                                       required
+                                >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="nome" class="control-label">Nome</label>
+                                <input class="form-control" type="text" id="nome" name="nome"
+                                       [(ngModel)]="cliente.nome"
+                                       required
+                                >
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="telefone" class="control-label">Telefone</label>
+                                <input class="form-control" type="text" id="telefone" name="telefone"
+                                       [(ngModel)]="cliente.telefone"
+                                       required
+                                >
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="email" class="control-label">Email</label>
+                                <input class="form-control" type="text" id="email" name="email"
+                                       [(ngModel)]="cliente.email"
+                                       required email
+                                >
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="celular" class="control-label">Celular</label>
+                                <input class="form-control" type="text" id="celular" name="celular"
+                                       [(ngModel)]="cliente.celular"
+                                       required
+                                >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="cep" class="control-label">CEP</label>
+                                <input class="form-control" type="text" id="cep" name="cep"
+                                       [(ngModel)]="cliente.cep"
+                                       required
+                                >
+                            </div>
+                            <div class="form-group col-md-1">
+                                <label for="numero" class="control-label">Numero</label>
+                                <input class="form-control" type="text" id="numero" name="numero"
+                                       [(ngModel)]="cliente.numero"
+                                       required
+                                >
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="endereco" class="control-label">Endereço</label>
+                                <input class="form-control" type="text" id="endereco" name="endereco"
+                                       [(ngModel)]="cliente.endereco"
+                                       required
+                                >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="cidade" class="control-label">Cidade</label>
+                                <input class="form-control" type="text" id="cidade" name="cidade"
+                                       [(ngModel)]="cliente.cidade"
+                                       required
+                                >
+                            </div>
+                            <div class="form-group col-md-1">
+                                <label for="estado" class="control-label">Estado</label>
+                                <input class="form-control" type="text" id="estado" name="estado"
+                                       [(ngModel)]="cliente.estado"
+                                       required
+                                >
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="bairro" class="control-label">Bairro</label>
+                                <input class="form-control" type="text" id="bairro" name="bairro"
+                                       [(ngModel)]="cliente.bairro"
+                                       required
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button *ngIf="cliente.id" type="button" class="btn btn-outline-success" (click)="update()"
+                        [disabled]="!f.valid"><img src="js/assets/svg/si-glyph-floppy-disk.svg"/>
+                    Alterar Cliente
+                </button>
+                <button *ngIf="!cliente.id" type="button" class="btn btn-outline-success" (click)="save()"
+                        [disabled]="!f.valid"><img src="js/assets/svg/si-glyph-floppy-disk.svg"/>
+                    Salvar Cliente
+                </button>
+                <button class="btn btn-outline-secondary" routerLink="/srcp/cliente">
+                    <img src="js/assets/svg/si-glyph-backward-page.svg"/> Voltar
+                </button>
+            </form>
+        </div>
+
+    </div>
+</app-cliente-card>
+
+<!--<div class="card c1 bg-ligth">-->
+    <!--<div class="card-header c-header1"> Home > Cliente</div>-->
+    <!--<div class="card-body c-body1">-->
+
+
+
+    <!--</div>-->
+<!--</div>-->
