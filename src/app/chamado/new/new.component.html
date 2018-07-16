@@ -10,37 +10,18 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="cliente_id" class="control-label">Cliente</label>
-                                <!--<input class="form-control" type="text" id="cliente" name="cliente_id"-->
-                                <!--[(ngModel)]="chamado.cliente_id" placeholder="Nome do Cliente"-->
-                                 <!--required-->
-                                <!--&gt;-->
-
-                                <!--[accept-user-input]="false"-->
-                                <!--[list-formatter]="renderCliente"-->
-                                <!--placeholder = "Selecione um Cliente"-->
-                                <!--display-property-name="nome"-->
-                                <!--[header-item-template]="clienteHeaderTemplate"-->
-                                <input
-                                        ngui-auto-complete
-                                        class="form-control"
-                                        id = "cliente_id"
-                                        name="cliente_id"
-                                        [(ngModel)] = "chamado.cliente_id"
-                                        [source] = "arrayOfCliente"
-                                        z-index = "5"
-                                />
-                                <!--<table class="table table-sm">-->
-                                    <!--<thead>-->
-                                        <!--<th>Id</th>-->
-                                        <!--<th>Nome</th>-->
-                                    <!--</thead>-->
-                                    <!--<tbody>-->
-                                        <!--<tr *ngFor="let n of nomeCliente">-->
-                                            <!--<td>{{n.id}}</td>-->
-                                            <!--<td>{{n.nome}}</td>-->
-                                        <!--</tr>-->
-                                    <!--</tbody>-->
-                                <!--</table>-->
+                                    <input
+                                            ngui-auto-complete
+                                            class="form-control"
+                                            id = "cliente_id"
+                                            name="cliente_id"
+                                            placeholder="Search Cliente"
+                                            [(ngModel)] = "dadosCliente"
+                                            [source] = "nomeCliente"
+                                            display-property-name="nome"
+                                            [list-formatter]="renderCliente"
+                                            [header-item-template]="clienteHeaderTemplate"
+                                    />
                             </div>
 
                         </div>

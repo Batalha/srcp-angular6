@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ClienteService} from '../../cliente/cliente.service';
 import {ChamadoService} from '../chamado.service';
 import {MessageService} from '../../bootstrap/message.service';
+import {Router} from "@angular/router";
 
 
 declare var $: any;
@@ -9,12 +10,15 @@ declare var $: any;
 @Component({
     selector: 'app-new',
     templateUrl: './new.component.html',
+    encapsulation: ViewEncapsulation.None,
     styleUrls: ['./new.component.scss']
 })
 
 export class NewComponent implements OnInit {
 
-    nomeCliente: any = [];
+    nomeCliente: any[] = [];
+    dadosCliente = '';
+
     //
     chamado = {
         id: null,
@@ -28,22 +32,26 @@ export class NewComponent implements OnInit {
         laudo: ''
     }
 
-    // arrayOfKeyValues: any[] = [
-    //     {'id': 1, 'value': 'Celio', 'telefone': '9827-4631'},
-    //     {'id': 2, 'value': 'Lucas', 'telefone': '1166-8833'},
-    //     {'id': 3, 'value': 'Fabiula', 'telefone': '9672-4433'},
-    //     {'id': 4, 'value': 'Dora', 'telefone': '3388-4433'}
-    // ]
+    clienteHeaderTemplate = `
+        <div class="form-row format">
+                <div class="col-md-6">Nome</div>
+                <div class="col-md-6">Telefone</div>
+        </div>
+    `;
 
-    arrayOfCliente: any[] = [
-        {'nome': 'Celio', 'telefone': '9827-4631'},
-        {'nome': 'Lucas', 'telefone': '1166-8833'},
-        {'nome': 'Fabiula', 'telefone': '9672-4433'},
-        {'nome': 'Dora', 'telefone': '3388-4433'}
-    ]
+    renderCliente(data: any) {
+        const html = `
+        <div class="form-row">
+                <div class="col-md-6">${data.nome}</div>
+                <div class="col-md-6">${data.telefone}</div>
+        </div>
+        `
+        return html;
+    }
 
 
     constructor(private dadosChamados: ChamadoService,
+                private router: Router,
                 private listCliente: ClienteService,
                 private messageService: MessageService) {
     }
@@ -57,30 +65,21 @@ export class NewComponent implements OnInit {
     getListaCliente() {
         this.listCliente.getClienteList().subscribe(data => {
             this.nomeCliente = data
-            for (var n = 0; n < data.length; n++) {
-
-
-            }
         });
     }
-    // renderCliente() {
-    //     const html = `
-    //             <div class='data-row'>
-    //                 <div class='col-1'></div>
-    //                 <div class='col-2'></div>
-    //             </div>
-    //     `
-    // }
-
 
     save() {
+        this.chamado.cliente_id = this.json(this.dadosCliente['id']);
+        this.dadosChamados.save(this.chamado)
+            .subscribe(() => {
+                this.messageService.message = 'OS Salvo com sucesso.';
+                this.router.navigate(['/srcp/chamado']);
 
-        console.log(this.chamado);
+        })
+    }
 
-        // this.dadosChamados.save(this.chamado)
-        //     .subscribe(() => {
-        // this.messageService.message = ''
-        // })
+    json(obj){
+        return JSON.stringify(obj, null, '  ');
     }
 
 
