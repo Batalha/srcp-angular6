@@ -1,0 +1,58 @@
+<app-cliente-card>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success" routerLink="/srcp/cliente/new"><img
+                            src="js/assets/svg/si-glyph-person-plus.svg"/> Novo Cliente
+                    </button>
+                </div>
+                <div *ngIf="message" class="col-md-8 text-left">
+                    <app-alert [timeout]="4000">{{message}}</app-alert>
+                </div>
+            </div>
+            <div class="card c2 bg-light">
+                <div class="card-header c-header2">Clientes</div>
+                <div class="card-body c-body2">
+                    <table id="mytable" class="table table-sm display" data-order='[[ 0, "desc" ]]'>
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>CPF/CNPJ</th>
+                            <th>Celular</th>
+                            <th>Email</th>
+                            <th>Ação</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbC" hidden>
+                        <tr *ngFor="let cliente of listCliente; let i = index">
+                            <td>{{cliente.id}}</td>
+                            <td>{{cliente.nome}}</td>
+                            <td>{{cliente.cpf_cnpj}}</td>
+                            <td>{{cliente.celular}}</td>
+                            <td>{{cliente.email}}</td>
+                            <td class="bt_a">
+                                <a routerLink='/srcp/cliente/{{cliente.id}}/view' class="badge b-view badge-secundario">
+                                    <img src="js/assets/svg/si-glyph-view.svg" alt="">
+                                </a>
+                                <a routerLink='/srcp/cliente/{{cliente.id}}/edit' class="badge b-edit badge-info">
+                                    <img src="js/assets/svg/si-glyph-edit.svg" alt="">
+                                </a>
+                                <a href="javascript:void(0)" (click)="destroy(cliente.id,i)" class="badge b-delete badge-danger">
+                                    <img src="js/assets/svg/si-glyph-delete.svg" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</app-cliente-card>
+
+

@@ -1,0 +1,42 @@
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div *ngIf="errorCredentials" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    Usuario ou Senha Invalido.
+                </div>
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <form class="form-horizontal">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input id="email" name="email" type="email" class="form-control" placeholder="E-mail"
+                                           [(ngModel)]="user.email"
+                                           required autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input id="password" name="password" type="password" class="form-control" name="password"
+                                           placeholder="Password"
+                                           [(ngModel)]="user.password"
+                                           required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <button type="button" class="btn btn-primary" (click)="onSubmitAuth()">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

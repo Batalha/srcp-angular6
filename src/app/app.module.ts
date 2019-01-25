@@ -1,30 +1,34 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
-import {AppRoutingModule} from './app-routing.module';
-import {ClienteModule} from './cliente/cliente.module';
-import {HomeComponent} from './home/home.component';
-import {HttpClientModule} from '@angular/common/http';
-import {LoginComponent} from './login/login.component';
-import {ServicoModule} from './servico/servico.module';
-import {ChamadoModule} from './chamado/chamado.module';
 
+import {TokenInterceptor} from "./interceptors/token-interceptor";
+import {RefreshTokenInterceptor} from "./interceptors/refresh-token-interceptor";
+import {AppErrorHandle} from "./app-error-handle";
+import {AppRoutingModule} from './app-routing.module';
+import {SrcpModule} from "./srcp/srcp.module";
+import {AuthModule} from "./auth/auth.module";
+import {AuthGuard} from "./guards/auth.guard";
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
-        LoginComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        ClienteModule,
-        ServicoModule,
-        ChamadoModule
+        AuthModule,
+        SrcpModule
     ],
-    providers: [],
+    providers: [
+        AuthGuard,
+        {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor, multi: true},
+        {provide: ErrorHandler, useClass: AppErrorHandle},
+
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

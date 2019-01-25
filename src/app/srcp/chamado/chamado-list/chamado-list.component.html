@@ -1,0 +1,59 @@
+<app-chamado-card>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <button class="btn btn-outline-success" routerLink="/srcp/chamado/new">
+                        <img src="js/assets/svg/si-glyph-adicionar.svg"/> Adicionar OS
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-outline-primary" routerLink="/srcp/chamado/lista">
+                        <img src="js/assets/svg/si-glyph-document-bullet-list.svg"/> Listar Dados Clientes
+                    </button>
+                </div>
+            </div>
+            <div class="card c2 bg-light">
+                <div class="card-header c-header2">Ordem de Serviços</div>
+                <div class="card-body c-body2">
+                    <table id="chamado_table" class="table table-sm display" data-order='[[ 0, "desc" ]]'>
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Data Inicial</th>
+                            <th>Data Final</th>
+                            <th>Estatus</th>
+                            <th>Ação</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbS" hidden>
+                        <!--<tbody id="tbC">-->
+                        <tr *ngFor="let chamado of listChamados; let i = index">
+                            <td>{{chamado.id}}</td>
+                            <td>{{chamado.cliente.nome}}</td>
+                            <td>{{chamado.data_inicial | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{chamado.data_final | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{chamado.status}}</td>
+                            <td class="bt_a">
+                                <a routerLink='/srcp/chamado/{{chamado.id}}/view' class="badge b-view badge-secundario">
+                                    <img src="js/assets/svg/si-glyph-view.svg" alt="">
+                                </a>
+                                <a routerLink='/srcp/chamado/{{chamado.id}}/edit' class="badge b-edit badge-info">
+                                    <img src="js/assets/svg/si-glyph-edit.svg" alt="">
+                                </a>
+                                <a href="javascript:void(0)" (click)="destroyChamado(chamado.id, i)"
+                                   class="badge b-delete badge-danger">
+                                    <img src="js/assets/svg/si-glyph-delete.svg" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</app-chamado-card>

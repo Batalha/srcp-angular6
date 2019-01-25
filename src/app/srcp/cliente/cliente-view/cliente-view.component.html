@@ -1,0 +1,89 @@
+<app-cliente-card>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card c2 bg-light">
+                    <div class="card-header c-header2">Dados do Pessoais</div>
+                    <div class="card-body c-body2">
+
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <td class="col">Nome</td>
+                                <td class="col2">{{ cliente.nome }}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">CPF/CNPJ</td>
+                                <td class="col2">{{cliente.cpf_cnpj}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Telefone</td>
+                                <td class="col2">{{cliente.telefone}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Celular</td>
+                                <td class="col2">{{cliente.celular}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Email</td>
+                                <td class="col2">{{cliente.email}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card c2 bg-light">
+                    <div class="card-header c-header2">Endereço</div>
+                    <div class="card-body c-body2">
+
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <td class="col">Endereco</td>
+                                <td class="col2">{{cliente.endereco}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Numero</td>
+                                <td class="col2">{{cliente.numero}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Bairro</td>
+                                <td class="col2">{{cliente.bairro}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Cidade</td>
+                                <td class="col2">{{cliente.cidade}}</td>
+                            </tr>
+                            <tr>
+                                <td class="col">Estado</td>
+                                <td class="col2">{{cliente.estado}}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button routerLink='/srcp/cliente/{{cliente.id}}/edit' class="btn btn-outline-success">
+            <img src="js/assets/svg/si-glyph-edit.svg" alt=""> Editar Cliente
+        </button>
+        <button style="margin-left: 5px" class="btn btn-outline-secondary" routerLink="/srcp/cliente">
+            <img src="js/assets/svg/si-glyph-backward-page.svg"/> Voltar
+        </button>
+    </div>
+</app-cliente-card>
+
+<!--<div class="card c1 bg-ligth">-->
+    <!--<div class="card-header c-header1"> Home > Cliente</div>-->
+    <!--<div class="card-body c-body1">-->
+
+
+
+
+    <!--</div>-->
+<!--</div>-->

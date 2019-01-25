@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from "@angular/router";
-import {HomeComponent} from "./home/home.component";
-import {LoginComponent} from "./login/login.component";
+import {RouterModule} from "@angular/router";
+import {LoginComponent} from "./auth/login/login.component";
 
-const route: Routes = [
-    {path: 'login', component: LoginComponent},
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
-    {path: 'srcp/home', component: HomeComponent}
+const route = [
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    {path: 'login', component: LoginComponent}
 ]
 
 

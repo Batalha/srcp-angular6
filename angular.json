@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/srcp-angular6",
+            "outputPath": "../srcp-laravel/public/js",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,7 +34,8 @@
               "node_modules/jquery-ui-dist/jquery-ui.min.js",
               "src/assets/DataTables/js/jquery.dataTables.min.js",
               "src/assets/DataTables/js/dataTables.jqueryui.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jspdf/dist/jspdf.min.js"
             ]
           },
           "configurations": {

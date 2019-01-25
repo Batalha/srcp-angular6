@@ -1,0 +1,73 @@
+.container-fluid {
+  margin-bottom: 100px;
+}
+
+.c2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.c-header2 {
+  font-weight: bold;
+  color: rgba(103, 87, 57, 0.8);
+  padding: .60rem 1.25rem;
+}
+
+.control-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(103, 87, 57, 0.8);
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border: 1px solid red;
+}
+
+.format {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #bfbfbf;
+  padding: 5px;
+
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #959595;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fafafa;
+  font-size: 14px;
+}
+
+.mb-3 {
+  a {
+    border: 1px solid #8c8c8c;
+    font-size: 14px;
+
+  }
+
+  a:hover {
+    background-color: #8c8c8c;
+    text-decoration: underline;
+  }
+}
+
+.nav-pills .nav-link {
+  border-radius: .10rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.4rem 0.5rem;
+}
+
+table {
+  tr {
+    font-size: 12px;
+  }
+  thead {
+    background-color: #c6c6c6;
+  }
+}
+

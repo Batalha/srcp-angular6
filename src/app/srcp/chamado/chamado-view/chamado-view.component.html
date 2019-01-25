@@ -1,0 +1,119 @@
+<app-chamado-card>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="form-row">
+                <button style="margin-left: 5px;" class="btn btn-outline-success" routerLink="/srcp/chamado/{{os.id}}/edit">
+                    <img src="js/assets/svg/si-glyph-edit.svg"/> Editar
+                </button>
+                <button style="margin-left: 5px;" class="btn btn-outline-success" (click)="downloadChamado()">
+                    <img src="js/assets/svg/si-glyph-print.svg"/> Imprimir
+                </button>
+            </div>
+            <div class="card c2 bg-light">
+                <div class="card-header c-header2">Ordem de Serviço</div>
+                <div class="card-body c-body2">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <img id="logo_os" src="js/assets/img/logo_srcp_os.png" alt="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <p>
+                            SOL REPAROS <br>
+                            End: <br>
+                            E-mail: <br>
+                            </p>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-row ">
+                        <div class="form-group col-md-12">
+                            <h6>Cliente</h6>
+                            <p class="font-weight-light text-sm-left">
+                                {{os.cliente.nome}}<br>
+                                {{os.cliente.endereco}}, {{os.cliente.numero}}<br>
+                                {{os.cliente.estado}}
+                            </p>
+
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <h6>Descrição</h6>
+                            <p class="font-weight-light">{{os.descricao}}</p>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <h6>Defeito</h6>
+                            <p class="font-weight-light">{{os.defeito}}</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <h6>Laudo Tecnico </h6>
+                            <p class="font-weight-light">{{os.laudo}}</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <h6>Observaçoes</h6>
+                            <p class="font-weight-light">{{os.observacao}}</p>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <table class="table table-striped table-bordered table-sm">
+                        <thead>
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Sub-Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let servico of listServico">
+                            <td width="50%">{{servico.nome}}</td>
+                            <td>R$ {{servico.preco}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><b>Valor Total :</b></td>
+                            <td><b>R$ {{soma}}</b></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="form-row" style="font-size: 18px">
+                        <div class="col-md-12 text-right">
+                            <b>Valor Total : R$ {{soma}}</b>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div id="content" #content hidden>
+        <h1>O Titlo</h1>
+
+        <p>Testando O a Geraçao de PDF</p>
+    </div>
+
+</app-chamado-card>
+

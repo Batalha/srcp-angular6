@@ -1,0 +1,54 @@
+
+    <div class="content-body">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="js/assets/img/logo_srcp.png" class="d-inline-block align-top logo" alt="">
+            </a>
+            <div class="dropdown pull-right image">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <img id="img" src="js/assets/img/icon_login.png" class="rounded-circle">
+                    <span class="mr-4">{{auth.getUser().name}}</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <button type="button" class="dropdown-item btn btn-link" routerLink="/srcp/trocar_senha">Trocar Senha</button>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" (click)="logout($event)">Sair</a>
+
+                </div>
+                <!--<img id="icon_off" src="js/assets/svg/si-glyph-turn-off.svg" class="rounded-circle">-->
+            </div>
+            <!--<div class="pull-right image">-->
+            <!--</div>-->
+        </nav>
+
+        <div class="btn-group-vertical btn-menu" aria-label="Vertical button group">
+            <!--<button type="button" routerLinkActive="active" routerLink="/srcp/home" class="btn btn-secondary text-left">-->
+                <!--<img src="js/assets/svg/si-glyph-house.svg" alt=""><span class="img-active"> Home</span></button>-->
+
+            <button type="button" routerLinkActive="active" routerLink="/srcp/cliente"
+                    class="btn btn-secondary text-left">
+                <img src="js/assets/svg/si-glyph-person-public.svg" alt=""><span class="img-active"> Clientes</span>
+            </button>
+
+            <button type="button" routerLinkActive="active" routerLink="/srcp/servico"
+                    class="btn btn-secondary text-left">
+                <img src="js/assets/svg/si-glyph-hammer-and-wrench.svg" alt=""><span class="img-active"> Serviços</span>
+            </button>
+
+            <button type="button" routerLinkActive="active" routerLink="/srcp/chamado"
+                    class="btn btn-secondary text-left">
+                <img src="js/assets/svg/si-glyph-tag-price.svg" alt=""><span
+                    class="img-active"> Ordem de Serviços</span>
+            </button>
+
+            <button type="button" class="btn btn-secondary b-border"></button>
+        </div>
+
+
+        <router-outlet></router-outlet>
+        <footer class="footer">
+            <div class="container text-center">
+                <span class="text-muted">Coloque o conteúdo do rodapé fixo aqui.</span>
+            </div>
+        </footer>
+    </div>
