@@ -52,7 +52,7 @@ export class ClienteNewComponent implements OnInit {
     update() {
         this.clienteService.update(this.cliente)
             .subscribe((data) => {
-                this.messageService.message = 'Cliente Alterado com Sucesso!';
+                this.messageService.messageCliente = 'Cliente Alterado com Sucesso!';
                 this.router.navigate(['/srcp/cliente']);
             });
     }
@@ -61,7 +61,7 @@ export class ClienteNewComponent implements OnInit {
     save() {
         this.clienteService.save(this.cliente)
             .subscribe((data) => {
-                this.messageService.message = 'Cliente salvo com Sucesso!';
+                this.messageService.messageCliente = 'Cliente salvo com Sucesso!';
                 this.router.navigate(['/srcp/cliente']);
             });
     }

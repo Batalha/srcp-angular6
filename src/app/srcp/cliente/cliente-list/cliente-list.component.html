@@ -3,8 +3,8 @@
         <div class="row-fluid">
             <div class="row">
                 <div class="col-md-2">
-                    <button class="btn btn-outline-success" routerLink="/srcp/cliente/new"><img
-                            src="js/assets/svg/si-glyph-person-plus.svg"/> Novo Cliente
+                    <button class="btn btn-outline-success" routerLink="/srcp/cliente/new">
+                        <img src="js/assets/svg/si-glyph-person-plus.svg"/> Novo Cliente
                     </button>
                 </div>
                 <div *ngIf="message" class="col-md-8 text-left">
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="card c2 bg-light">
-                <div class="card-header c-header2">Clientes</div>
+                <!--<div class="card-header c-header2">Clientes</div>-->
                 <div class="card-body c-body2">
                     <table id="mytable" class="table table-sm display" data-order='[[ 0, "desc" ]]'>
                         <thead>

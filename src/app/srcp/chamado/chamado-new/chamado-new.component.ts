@@ -134,7 +134,7 @@ export class ChamadoNewComponent implements OnInit {
         this.chamado.cliente_id = this.json(this.dadosCliente['id']);
         this.dadosChamados.update(this.chamado)
             .subscribe((data) => {
-                this.messageService.message = 'OS Alterado com Sucesso!';
+                this.messageService.messageChamado = 'OS Alterado com Sucesso!';
                 this.router.navigate(['/srcp/chamado']);
             });
     }
@@ -143,7 +143,7 @@ export class ChamadoNewComponent implements OnInit {
         this.chamado.cliente_id = this.json(this.dadosCliente['id']);
         this.dadosChamados.save(this.chamado)
             .subscribe((data) => {
-                this.messageService.message = 'OS Salvo com sucesso.';
+                this.messageService.messageChamado = 'OS Salvo com sucesso.';
                 this.router.navigate([`/srcp/chamado/${data.id}/edit`]);
 
             })

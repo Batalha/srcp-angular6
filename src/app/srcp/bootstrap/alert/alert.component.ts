@@ -28,7 +28,10 @@ export class AlertComponent implements OnInit {
             setTimeout(() => {
                 $(this.divAlert.nativeElement).alert('close');
             }, this.timeout);
-            this.messageService.message = null;
+            this.messageService.messageCliente = null;
+            this.messageService.messageChamado = null;
+            this.messageService.messageServico = null;
+            this.messageService.messagePass = null;
         }
 
     }

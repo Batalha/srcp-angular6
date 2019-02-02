@@ -19,7 +19,7 @@ export class ServicoListComponent implements OnInit {
 
     constructor(private serivcoService: ServicoService,
                 private messageService: MessageService) {
-        this.message = this.messageService.message;
+        this.message = this.messageService.messageServico;
     }
 
     ngOnInit() {

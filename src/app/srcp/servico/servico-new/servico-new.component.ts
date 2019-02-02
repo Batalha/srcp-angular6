@@ -41,7 +41,7 @@ export class ServicoNewComponent implements OnInit {
     updateServico() {
         this.servicoService.update(this.servico)
             .subscribe((data) => {
-                this.messageServico.message = 'Serviço Alterado com Sucesso!';
+                this.messageServico.messageServico = 'Serviço Alterado com Sucesso!';
                 this.router.navigate(['/srcp/servico']);
             });
     }
@@ -49,7 +49,7 @@ export class ServicoNewComponent implements OnInit {
     saveServico() {
         this.servicoService.save(this.servico)
             .subscribe((data) => {
-                this.messageServico.message = 'Serviço Salvo Com Sucesso';
+                this.messageServico.messageServico = 'Serviço Salvo Com Sucesso';
                 this.router.navigate(['/srcp/servico']);
 
             })

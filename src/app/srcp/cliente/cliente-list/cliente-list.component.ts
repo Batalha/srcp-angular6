@@ -23,7 +23,7 @@ export class ClienteListComponent implements OnInit {
         private router: Router
     )
     {
-        this.message = this.messegeServece.message;
+        this.message = this.messegeServece.messageCliente;
     }
 
     ngOnInit() {

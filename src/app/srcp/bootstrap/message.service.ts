@@ -4,7 +4,10 @@ import { Injectable } from '@angular/core';
 export class MessageService {
 
 
-  public message = null
+  public messageCliente = null
+  public messageChamado = null
+  public messageServico = null
+  public messagePass = null
 
   constructor() { }
 

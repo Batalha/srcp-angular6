@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../auth.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {MessageService} from "../../srcp/bootstrap/message.service";
 
 @Component({
     selector: 'app-login',
@@ -11,16 +12,19 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
     errorCredentials = false;
+    messagepass = null;
 
     user = {
-        email: '',
+        name: '',
         password:''
     }
 
-    constructor(private auth: AuthService, private router: Router) {
+    constructor(private auth: AuthService, private router: Router, private message: MessageService) {
+
     }
 
     ngOnInit() {
+        this.messagepass = this.message.messagePass;
 
     }
 

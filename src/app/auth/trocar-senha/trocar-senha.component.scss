@@ -1,1 +1,22 @@
-//@import url('');
+.container {
+  margin-top: 12%;
+}
+
+.card{
+  width: 75%;
+  height: 340px;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  background-color: #606263;
+}
+
+.login_btn {
+  margin-top: 25px;
+  width: 100%;
+  background: #c0392b !important;
+  color: white !important;
+}

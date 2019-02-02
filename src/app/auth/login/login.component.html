@@ -1,41 +1,96 @@
 
+    <!--<div class="container">-->
+        <!--<div class="row justify-content-center">-->
+            <!--<div class="col-md-5">-->
+                <!--<div *ngIf="errorCredentials" class="alert alert-danger alert-dismissible fade show" role="alert">-->
+                    <!--<button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+                        <!--<span aria-hidden="true">&times;</span>-->
+                    <!--</button>-->
+                    <!--Usuario ou Senha Invalido.-->
+                <!--</div>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-header">Login</div>-->
+                    <!--<div class="card-body">-->
+                        <!--<form class="form-horizontal">-->
+                            <!--<div class="form-row">-->
+                                <!--<div class="form-group col-md-12">-->
+                                    <!--<input id="email" name="name" type="email" class="form-control" placeholder="Usuario"-->
+                                           <!--[(ngModel)]="user.name"-->
+                                           <!--required autofocus>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<div class="form-row">-->
+                                <!--<div class="form-group col-md-12">-->
+                                    <!--<input id="password" name="password" type="password" class="form-control" name="password"-->
+                                           <!--placeholder="Password"-->
+                                           <!--[(ngModel)]="user.password"-->
+                                           <!--required>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<div class="form-row">-->
+                                <!--<div class="form-group col-md-2">-->
+                                    <!--<button type="button" class="btn btn-primary" (click)="onSubmitAuth()">Login</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-5">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-4">
                 <div *ngIf="errorCredentials" class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     Usuario ou Senha Invalido.
                 </div>
-                <div class="card">
-                    <div class="card-header">Login</div>
-                    <div class="card-body">
-                        <form class="form-horizontal">
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <input id="email" name="email" type="email" class="form-control" placeholder="E-mail"
-                                           [(ngModel)]="user.email"
-                                           required autofocus>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <input id="password" name="password" type="password" class="form-control" name="password"
-                                           placeholder="Password"
-                                           [(ngModel)]="user.password"
-                                           required>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-md-2">
-                                    <button type="button" class="btn btn-primary" (click)="onSubmitAuth()">Login</button>
-                                </div>
-                            </div>
-                        </form>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="js/assets/img/icon_login.png" class="brand_logo" alt="Logo">
                     </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><img src="js/assets/svg/si-glyph-person-2.svg" alt=""></span>
+                            </div>
+                            <input id="name" name="name" type="text" class="form-control input_user" placeholder="Usuario"
+                                   [(ngModel)]="user.name"
+                                   required autofocus>
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><img src="js/assets/svg/si-glyph-key-2.svg" alt=""></span>
+                            </div>
+                            <input id="password" name="password" type="password" class="form-control input_pass" name="password"
+                                   placeholder="Password"
+                                   [(ngModel)]="user.password"
+                                   required>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<div class="custom-control custom-checkbox">-->
+                                <!--<input type="checkbox" class="custom-control-input" id="customControlInline">-->
+                                <!--<label class="custom-control-label" for="customControlInline">Remember me</label>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </form>
+                </div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+                    <button type="button" name="button" class="btn login_btn" (click)="onSubmitAuth()">Login</button>
                 </div>
             </div>
         </div>

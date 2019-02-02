@@ -11,8 +11,12 @@ import {Router} from "@angular/router";
 export class TrocarSenhaComponent implements OnInit {
 
   dataPass = {
-    password: '',
-    passwordConfirm: '',
+    id:null,
+    name:'',
+    email:'',
+    password:'',
+    passwordConfirm:'',
+    remember_token:''
   }
 
 
@@ -29,8 +33,8 @@ export class TrocarSenhaComponent implements OnInit {
   trocarSenha(){
     this.authService.update(this.dataPass)
         .subscribe((data) => {
-            this.messageService.message = 'Senha Alterado com Sucesso!';
-            this.router.navigate(['/srcp/login']);
+            this.messageService.messagePass = 'Senha Alterado com Sucesso!';
+            this.router.navigate(['/login']);
         });
   }
 
